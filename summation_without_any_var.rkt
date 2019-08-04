@@ -1,11 +1,8 @@
 #lang racket
 
 (define (summation list)
-  (cond
-    ((null? list) 0)
-    (else (+ (car list)
-             (cond
-               ((null?  list) 0)
-               (else (summation (cdr list))))))))
+  (if
+   (null? list) 0
+   (+ (car list) (summation (cdr list)))))
 
 (summation '(1 2 3))
