@@ -2,8 +2,6 @@
 ; Since we have lists as a program in lisp (a procedure is treated as a list), how does one list communicate with another when we call an identifier
 
 (define (is_valid_element? current_element marks_array)
-  (display marks_array)
-  (newline)
   (cond
     ((null? marks_array) #t)
     ((< current_element (car marks_array)) #f)
