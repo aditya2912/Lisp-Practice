@@ -9,3 +9,14 @@
 			:flags '(:shown))
        (let ((,surface (sdl2:get-window-surface ,window)))
 	 ,@body))))
+
+
+(defmacro render_window_with_index_and_renderer ((window renderer) &body body)
+  `(sdl2:with-init (:video)
+     (sdl2:with-window (,window
+			:title "Plain and Simple"
+			:w *screen_width*
+			:h *screen_height*
+			:flags '(:shown))
+       (sdl2:with-renderer (,renderer ,window :index -2 :flags '(:accelerated))
+	 ,@body))))
