@@ -1,5 +1,4 @@
 #lang racket
-
 (define (check_if_member element array)
   (cond
     ((eq? (cdr array) '()) "NOT PRESENT")
